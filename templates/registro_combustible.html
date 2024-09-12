@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Registro de Combustible</h2>
+    
+    <!-- Formulario para agregar nuevos registros -->
+    <form action="{{ url_for('registro_combustible') }}" method="post">
+        <!-- Aquí van los campos del formulario -->
+        <div class="form-group">
+            <label for="camion_id">Placa del Camión</label>
+            <select id="camion_id" name="camion_id" class="form-control">
+                {% for placa in placas %}
+                <option value="{{ placa }}">{{ placa }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="kilometraje_inicial">Kilometraje Inicial</label>
+            <input type="number" id="kilometraje_inicial" name="kilometraje_inicial" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="kilometraje_final">Kilometraje Final</label>
+            <input type="number" id="kilometraje_final" name="kilometraje_final" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Registro</button>
+    </form>
+
+    <h3 class="mt-4">Despachos Registrados</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Placa</th>
+                <th>Kilometraje Inicial</th>
+                <th>Kilometraje Final</th>
+                <th>Fecha</th>
+                <th>Galones</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for despacho in despachos %}
+            <tr>
+                <td>{{ despacho.placa }}</td>
+                <td>{{ despacho.km_inicio }}</td>
+                <td>{{ despacho.km_final }}</td>
+                <td>{{ despacho.fecha }}</td>
+                <td>{{ despacho.galones }}</td>
+                <td>
+                    <!-- Botón de Editar -->
+                    <a href="{{ url_for('editar_despacho', id=despacho.id) }}" class="btn btn-warning btn-sm">Editar</a>
+                    
+                    <!-- Botón de Eliminar -->
+                    <form action="{{ url_for('eliminar_despacho', id=despacho.id) }}" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

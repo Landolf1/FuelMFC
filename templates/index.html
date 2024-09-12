@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Mi Aplicación</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="menu_content">
+            <nav class="menu_elements">
+                <a href="{{ url_for('home') }}">Inicio</a>
+                <a href="{{ url_for('usuarios') }}">Usuarios</a>
+                <a href="{{ url_for('camiones') }}">Camiones</a>
+                <a href="{{ url_for('registro_combustible') }}">Registro de Combustible</a>
+                <a href="{{ url_for('logout') }}" class="logout-button">Cerrar sesión</a>
+            </nav>
+        </div>
+        <div class="main_content">
+            <h1>Bienvenido a Mi Aplicación</h1>
+            <p>Hola, {{ user.username }}! Estamos encantados de verte.</p>
+            <p>Aquí puedes gestionar tus datos, agregar nuevos registros y mucho más.</p>
+        </div>
+    </div>
+</body>
+</html>

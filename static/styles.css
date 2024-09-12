@@ -1,0 +1,318 @@
+/* Estilos para el cuerpo de la página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #1D1B21;
+}
+
+/* Contenedor principal que ocupa casi toda la pantalla */
+.content_container {
+    display: flex;
+    flex-direction: row;
+    width: 98vw;   /* Ocupará el 98% del ancho de la ventana */
+    height: 95vh;  /* Ocupará el 95% de la altura de la ventana */
+    background-color: #252329;
+    border-radius: 25px;
+    padding: 0;  /* Elimina padding extra para alinear el menú con el borde */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Menú lateral ajustado y alineado */
+.menu_content {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 15%;   /* El menú ocupará el 15% del contenedor principal */
+    height: 100%;
+    padding: 20px 10px;  /* Padding vertical y horizontal */
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+/* Ajusta el contenedor de los elementos del menú para alineación */
+.menu_elements {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* Alinea los enlaces al inicio (izquierda) */
+    width: 260px;  /* Asegura que los elementos ocupen todo el ancho disponible */
+    padding: 0px;  /* Elimina padding extra para alineación precisa */
+    margin-bottom: auto; /* Empuja el botón de cerrar sesión al final */
+}
+
+/* Estilo de cada ítem del menú */
+.menu_elements li {
+    list-style: none;
+    padding: 0;  /* Elimina padding extra para alineación precisa */
+    margin: 0;   /* Elimina margen extra */
+    margin-bottom: 10px; /* Agrega espacio entre los botones del menú */
+}
+
+/* Estilo de los enlaces del menú */
+.menu_elements a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 20px 20px;  /* Ajusta el padding interno */
+    display: flex;  /* Utiliza flexbox para centrar el contenido */
+    align-items: center;  /* Centra verticalmente el contenido */
+    justify-content: flex-start;  /* Alinea el texto a la izquierda */
+    height: 20px;  /* Ajusta la altura del botón */
+    width: 200px;  /* Asegura que el botón ocupe todo el ancho del menú */
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilo cuando el mouse pasa por encima */
+.menu_elements a:hover {
+    background-color: #312AB2;
+    color: #ffffff;
+}
+
+/* Estilo para el botón de cerrar sesión */
+.menu_elements li:last-child a {
+    background-color: #ff4d4d; /* Color de fondo para el botón de cerrar sesión */
+    border-radius: 50px; /* Mantiene el radio de borde del botón */
+    font-weight: bold; /* Hacer el texto del botón más destacado */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+/* Estilo cuando el mouse pasa por encima del botón de cerrar sesión */
+.menu_elements li:last-child a:hover {
+    background-color: #cc0000; /* Color de fondo al pasar el mouse sobre el botón */
+    color: #ffffff; /* Mantiene el color del texto */
+}
+
+/* Estilo para los íconos en el menú */
+.menu_elements i {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+    font-size: 1.5rem; /* Tamaño del icono */
+}
+
+/* Estilo para la página de camiones */
+.main_content {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 85%;   /* El contenido ahora ocupará el 85% del contenedor principal */
+    height: calc(95vh - 40px); /* Ajusta la altura del contenido principal */
+    padding: 20px;
+    background-color: #1D1B21;
+    border-radius: 20px;
+    color: #ffffff;
+    box-sizing: border-box;
+    overflow: auto;
+    margin-left: 0; /* Asegura que el contenido esté pegado al menú */
+    margin-top: 20px; /* Ajusta este valor para mover el contenido hacia abajo */
+    margin-right: 15px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #252329;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+form input {
+    display: block;
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #ffffff;
+}
+
+form button {
+    background-color: #312AB2;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #1F1A6D;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #312AB2;
+    color: #ffffff;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #333;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #252329;
+}
+
+table tbody tr:hover {
+    background-color: #1F1A6D;
+}
+
+/* Estilo del botón de cerrar sesión */
+.menu_elements a.logout-button {
+    color: #ff0000;  /* Rojo para el botón de cerrar sesión */
+    margin-top: auto;  /* Empuja el botón hacia el final del menú */
+}
+
+/* Estilo específico para el input de camion_id */
+#camion_id {
+    display: block;
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #ffffff;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#camion_id:focus {
+    border-color: #312AB2;
+    outline: none;
+}
+
+.lista_registros {
+    margin-top: 20px;
+}
+
+.lista_registros h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.lista_registros table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.lista_registros th, .lista_registros td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+}
+
+.lista_registros th {
+    background-color: #312AB2;
+    color: #ffffff;
+}
+
+.lista_registros tbody tr:nth-child(even) {
+    background-color: #333;
+}
+
+.lista_registros tbody tr:nth-child(odd) {
+    background-color: #252329;
+}
+
+.lista_registros tbody tr:hover {
+    background-color: #1F1A6D;
+}
+
+.btn {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-edit {
+    background-color: #007bff; /* Color para el botón de Editar */
+}
+
+.btn-edit:hover {
+    background-color: #0056b3; /* Color al pasar el mouse sobre el botón de Editar */
+}
+
+.btn-delete {
+    background-color: #dc3545; /* Color para el botón de Eliminar */
+}
+
+.btn-delete:hover {
+    background-color: #c82333; /* Color al pasar el mouse sobre el botón de Eliminar */
+}
+
+.btn i {
+    margin-right: 5px;
+}
+
+/* Estilos comunes para los botones */
+.btn-custom {
+    font-size: 0.875rem; /* Tamaño de fuente más pequeño */
+    padding: 0.25rem 0.5rem; /* Relleno más pequeño */
+    border-radius: 0.2rem; /* Bordes redondeados */
+    border: 1px solid transparent; /* Borde transparente por defecto */
+    color: #fff; /* Color del texto por defecto */
+    text-decoration: none; /* Quitar subrayado */
+    display: inline-block; /* Alinear el contenido en línea */
+    text-align: center; /* Alinear texto al centro */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave para colores */
+}
+
+.btn-edit {
+    background-color: #ffc107; /* Color de fondo del botón de Editar */
+    border-color: #ffc107; /* Color del borde del botón de Editar */
+}
+
+.btn-edit:hover {
+    background-color: #e0a800; /* Color de fondo cuando se pasa el mouse sobre el botón de Editar */
+    border-color: #d39e00; /* Color del borde cuando se pasa el mouse sobre el botón de Editar */
+}
+
+.btn-delete {
+    background-color: #dc3545; /* Color de fondo del botón de Eliminar */
+    border-color: #dc3545; /* Color del borde del botón de Eliminar */
+}
+
+.btn-delete:hover {
+    background-color: #c82333; /* Color de fondo cuando se pasa el mouse sobre el botón de Eliminar */
+    border-color: #bd2130; /* Color del borde cuando se pasa el mouse sobre el botón de Eliminar */
+}
+
+/* Para asegurarte de que los botones dentro de formularios se vean igual */
+form .btn-custom {
+    display: inline; /* Mostrar botones dentro de formularios en línea */
+}

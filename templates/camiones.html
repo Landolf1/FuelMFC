@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Gestión de Camiones{% endblock %}
+
+{% block content %}
+<h2>Gestión de Camiones</h2>
+
+<!-- Formulario para agregar o editar camiones -->
+<form method="post">
+    <label for="numero_ficha">Número de Ficha:</label>
+    <input type="text" id="numero_ficha" name="numero_ficha" required>
+    <label for="marca">Marca:</label>
+    <input type="text" id="marca" name="marca" required>
+    <label for="placa">Placa:</label>
+    <input type="text" id="placa" name="placa" required>
+    <button type="submit">Guardar</button>
+</form>
+
+<!-- Tabla de camiones -->
+<table>
+    <thead>
+        <tr>
+            <th>Número de Ficha</th>
+            <th>Marca</th>
+            <th>Placa</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for camion in camiones %}
+        <tr>
+            <td>{{ camion.numero_ficha }}</td>
+            <td>{{ camion.marca }}</td>
+            <td>{{ camion.placa }}</td>
+            <td>
+                <a href="{{ url_for('editar_camion', numero_ficha=camion.numero_ficha) }}">Editar</a>
+                <form action="{{ url_for('eliminar_camion', id=camion.id) }}" method="post" style="display:inline;">
+                    <button type="submit">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

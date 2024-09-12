@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Registros</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Despachos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Placa</th>
+                <th>Kilometraje Inicial</th>
+                <th>Kilometraje Final</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for despacho in despachos %}
+            <tr>
+                <td>{{ despacho.id }}</td>
+                <td>{{ despacho.placa }}</td>
+                <td>{{ despacho.kilometraje_inicial }}</td>
+                <td>{{ despacho.kilometraje_final }}</td>
+                <td>
+                    <a href="{{ url_for('editar_despacho', id=despacho.id) }}">Editar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

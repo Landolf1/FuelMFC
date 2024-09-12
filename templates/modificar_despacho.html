@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Despacho</title>
+</head>
+<body>
+    <h1>Editar Despacho</h1>
+    <form method="post">
+        <label for="placa">Placa:</label>
+        <input type="text" id="placa" name="placa" value="{{ despacho.placa }}" required>
+        <br>
+        <label for="kilometraje_inicial">Kilometraje Inicial:</label>
+        <input type="number" id="kilometraje_inicial" name="kilometraje_inicial" value="{{ despacho.kilometraje_inicial }}" required>
+        <br>
+        <label for="kilometraje_final">Kilometraje Final:</label>
+        <input type="number" id="kilometraje_final" name="kilometraje_final" value="{{ despacho.kilometraje_final }}" required>
+        <br>
+        <input type="submit" value="Guardar cambios">
+    </form>
+    <a href="{{ url_for('ver_despachos') }}">Volver a la lista</a>
+</body>
+</html>

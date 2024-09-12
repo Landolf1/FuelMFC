@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Camiones</title>
+</head>
+<body>
+    <h1>Camiones</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Placa</th>
+                <th>Modelo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for camion in camiones %}
+            <tr>
+                <td>{{ camion.id }}</td>
+                <td>{{ camion.placa }}</td>
+                <td>{{ camion.modelo }}</td>
+                <td>
+                    <a href="{{ url_for('editar_camion', id=camion.id) }}">Editar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Camión</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Camión</h1>
+        <form action="{{ url_for('editar_camion', id=camion.id) }}" method="post">
+            <div class="form-group">
+                <label for="numero_ficha">Número de Ficha:</label>
+                <input type="text" id="numero_ficha" name="numero_ficha" value="{{ camion.numero_ficha }}" required>
+            </div>
+            <div class="form-group">
+                <label for="marca">Marca:</label>
+                <input type="text" id="marca" name="marca" value="{{ camion.marca }}" required>
+            </div>
+            <div class="form-group">
+                <label for="placa">Placa:</label>
+                <input type="text" id="placa" name="placa" value="{{ camion.placa }}" required>
+            </div>
+            <button type="submit">Actualizar Camión</button>
+        </form>
+        <a href="{{ url_for('camiones') }}">Volver a la lista de camiones</a>
+    </div>
+</body>
+</html>
